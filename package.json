@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Microservice for Chat CMRIT Backend",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "nodemon dist/index.js",
+    "dev2": "ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -20,11 +23,23 @@
   },
   "homepage": "https://github.com/ShrivasNadiger/chatcmrit-backend#readme",
   "dependencies": {
+    "@google/genai": "^1.13.0",
+    "@google/generative-ai": "^0.24.1",
+    "@modelcontextprotocol/sdk": "^1.17.3",
+    "@types/cors": "^2.8.19",
     "axios": "^1.11.0",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.9.2"
   }
 }
